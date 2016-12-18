@@ -1,0 +1,26 @@
+{
+  "name": "my-project",
+  "description": "test webpack",
+  "main": "",
+  "authors": [
+    "xvkai2010@gmail.com <xvkai2010@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-elements": "^1.0.7",
+    "vaadin-combo-box": "^1.1.5",
+    "iron-icons": "^1.2.0",
+    "vaadin-grid": "^1.2.0",
+    "vaadin-upload": "^1.1.0",
+    "vaadin-date-picker": "^1.2.0"
+  }
+}
