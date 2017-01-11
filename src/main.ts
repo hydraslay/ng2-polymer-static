@@ -9,8 +9,11 @@ if (environment.production) {
   enableProdMode();
 }
 
-var promise = platformBrowserDynamic().bootstrapModule(AppModule);
-promise.then(() => console.log('test'));
+platformBrowserDynamic().bootstrapModule(AppModule)
+
+// var promise = platformBrowserDynamic().bootstrapModule(AppModule);
+// promise.then(() => console.log('test'));
+
 // document.addEventListener('WebComponentsReady', () => {
 //   platformBrowserDynamic().bootstrapModule(AppModule)
 // });
