@@ -49,7 +49,7 @@ Run `npm run serve:aot` to serve.
 (the JIT is still available in the same project folder so you can compare the load performance.)
 
 
-# Start (JIT)
+## to do with JIT
 
 Run `npm install` and `bower install`.
 
