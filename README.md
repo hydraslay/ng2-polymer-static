@@ -9,7 +9,7 @@ You can also generate for other elements by using the [generator](https://github
 
 
 # AOT compile is available 
-But the directive file need to modify after generated.
+The directive file need to modify after generated. (if you make new ones than this repository)
 
 for example:
 If there is a 
