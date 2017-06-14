@@ -9,6 +9,11 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(invalid-changed)": "_emitChangeEvent('invalid', $event);", "(value-changed)": "_emitChangeEvent('value', $event);", "(opened-changed)": "_emitChangeEvent('opened', $event);", "(selected-item-changed)": "_emitChangeEvent('selectedItem', $event);" }
 })
 export class VaadinComboBoxChangeEventsAdapterDirective {
+    invalidChange: any;
+    valueChange: any;
+    openedChange: any;
+    selectedItemChange: any;
+
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('invalid')] = new EventEmitter<any>(false);
@@ -68,6 +73,7 @@ export class VaadinComboBoxFormElementDirective {
     host: { "(items-changed)": "_setValueFromElement('items', $event);" }
 })
 export class VaadinComboBoxNotifyForDiffersDirective implements OnInit, DoCheck {
+    items: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

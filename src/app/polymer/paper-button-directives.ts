@@ -9,6 +9,9 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(active-changed)": "_emitChangeEvent('active', $event);", "(focused-changed)": "_emitChangeEvent('focused', $event);", "(disabled-changed)": "_emitChangeEvent('disabled', $event);" }
 })
 export class PaperButtonChangeEventsAdapterDirective {
+    activeChange: any;
+    focusedChange: any;
+    disabledChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('active')] = new EventEmitter<any>(false);
@@ -67,6 +70,7 @@ export class PaperButtonFormElementDirective {
     host: { "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);" }
 })
 export class PaperButtonNotifyForDiffersDirective implements OnInit, DoCheck {
+    keyEventTarget: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

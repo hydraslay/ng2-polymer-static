@@ -64,6 +64,7 @@ export class PaperDialogScrollableFormElementDirective {
     host: { "(dialog-element-changed)": "_setValueFromElement('dialogElement', $event);" }
 })
 export class PaperDialogScrollableNotifyForDiffersDirective implements OnInit, DoCheck {
+    dialogElement: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

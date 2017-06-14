@@ -9,6 +9,14 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(active-changed)": "_emitChangeEvent('active', $event);", "(focused-changed)": "_emitChangeEvent('focused', $event);", "(disabled-changed)": "_emitChangeEvent('disabled', $event);", "(value-changed)": "_emitChangeEvent('value', $event);", "(invalid-changed)": "_emitChangeEvent('invalid', $event);", "(selected-item-label-changed)": "_emitChangeEvent('selectedItemLabel', $event);", "(selected-item-changed)": "_emitChangeEvent('selectedItem', $event);", "(opened-changed)": "_emitChangeEvent('opened', $event);" }
 })
 export class PaperDropdownMenuChangeEventsAdapterDirective {
+    activeChange: any;
+    focusedChange: any;
+    disabledChange: any;
+    valueChange: any;
+    invalidChange: any;
+    selectedItemLabelChange: any;
+    selectedItemChange: any;
+    openedChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('active')] = new EventEmitter<any>(false);
@@ -73,6 +81,7 @@ export class PaperDropdownMenuFormElementDirective {
     host: { "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);" }
 })
 export class PaperDropdownMenuNotifyForDiffersDirective implements OnInit, DoCheck {
+    keyEventTarget: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

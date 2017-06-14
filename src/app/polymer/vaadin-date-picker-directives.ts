@@ -9,6 +9,10 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(value-changed)": "_emitChangeEvent('value', $event);", "(invalid-changed)": "_emitChangeEvent('invalid', $event);", "(opened-changed)": "_emitChangeEvent('opened', $event);" }
 })
 export class VaadinDatePickerChangeEventsAdapterDirective {
+    valueChange: any;
+    invalidChange: any;
+    openedChange: any;
+    
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('value')] = new EventEmitter<any>(false);
@@ -67,6 +71,8 @@ export class VaadinDatePickerFormElementDirective {
     host: { "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);", "(i18n-changed)": "_setValueFromElement('i18n', $event);" }
 })
 export class VaadinDatePickerNotifyForDiffersDirective implements OnInit, DoCheck {
+    keyEventTarget: any;
+    i18n: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

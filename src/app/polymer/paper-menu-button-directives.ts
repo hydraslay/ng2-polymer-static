@@ -9,6 +9,11 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(focused-changed)": "_emitChangeEvent('focused', $event);", "(disabled-changed)": "_emitChangeEvent('disabled', $event);", "(opened-changed)": "_emitChangeEvent('opened', $event);", "(horizontal-offset-changed)": "_emitChangeEvent('horizontalOffset', $event);", "(vertical-offset-changed)": "_emitChangeEvent('verticalOffset', $event);" }
 })
 export class PaperMenuButtonChangeEventsAdapterDirective {
+    focusedChange: any;
+    disabledChange: any;
+    openedChange: any;
+    horizontalOffsetChange: any;
+    verticalOffsetChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('focused')] = new EventEmitter<any>(false);
@@ -69,6 +74,9 @@ export class PaperMenuButtonFormElementDirective {
     host: { "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);", "(open-animation-config-changed)": "_setValueFromElement('openAnimationConfig', $event);", "(close-animation-config-changed)": "_setValueFromElement('closeAnimationConfig', $event);" }
 })
 export class PaperMenuButtonNotifyForDiffersDirective implements OnInit, DoCheck {
+    keyEventTarget: any;
+    openAnimationConfig: any;
+    closeAnimationConfig: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

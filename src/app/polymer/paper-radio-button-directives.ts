@@ -9,6 +9,13 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(active-changed)": "_emitChangeEvent('active', $event);", "(focused-changed)": "_emitChangeEvent('focused', $event);", "(disabled-changed)": "_emitChangeEvent('disabled', $event);", "(value-changed)": "_emitChangeEvent('value', $event);", "(invalid-changed)": "_emitChangeEvent('invalid', $event);", "(checked-changed)": "_emitChangeEvent('checked', $event);" }
 })
 export class PaperRadioButtonChangeEventsAdapterDirective {
+    activeChange: any;
+    focusedChange: any;
+    disabledChange: any;
+    valueChange: any;
+    invalidChange: any;
+    checkedChange: any;
+
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('active')] = new EventEmitter<any>(false);
@@ -70,6 +77,7 @@ export class PaperRadioButtonFormElementDirective {
     host: { "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);" }
 })
 export class PaperRadioButtonNotifyForDiffersDirective implements OnInit, DoCheck {
+    keyEventTarget: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

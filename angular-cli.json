@@ -11,8 +11,8 @@
         "assets",
         "favicon.ico"
       ],
-      "index": "index.html",
-      "main": "main.ts",
+      "index": "index.jit.html",
+      "main": "main.jit.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",

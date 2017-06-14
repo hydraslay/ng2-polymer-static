@@ -9,6 +9,11 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(selected-changed)": "_emitChangeEvent('selected', $event);", "(selected-item-changed)": "_emitChangeEvent('selectedItem', $event);", "(items-changed)": "_emitChangeEvent('items', $event);", "(selected-values-changed)": "_emitChangeEvent('selectedValues', $event);", "(selected-items-changed)": "_emitChangeEvent('selectedItems', $event);" }
 })
 export class PaperMenuChangeEventsAdapterDirective {
+    selectedChange: any;
+    selectedItemChange: any;
+    itemsChange: any;
+    selectedValuesChange: any;
+    selectedItemsChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('selected')] = new EventEmitter<any>(false);
@@ -69,6 +74,8 @@ export class PaperMenuFormElementDirective {
     host: { "(selected-values-changed)": "_setValueFromElement('selectedValues', $event);", "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);" }
 })
 export class PaperMenuNotifyForDiffersDirective implements OnInit, DoCheck {
+    selectedValues: any;
+    keyEventTarget: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

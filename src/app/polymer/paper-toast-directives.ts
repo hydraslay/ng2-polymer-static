@@ -9,6 +9,9 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(horizontal-offset-changed)": "_emitChangeEvent('horizontalOffset', $event);", "(vertical-offset-changed)": "_emitChangeEvent('verticalOffset', $event);", "(opened-changed)": "_emitChangeEvent('opened', $event);" }
 })
 export class PaperToastChangeEventsAdapterDirective {
+    horizontalOffsetChange: any;
+    verticalOffsetChange: any;
+    openedChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('horizontalOffset')] = new EventEmitter<any>(false);
@@ -67,6 +70,10 @@ export class PaperToastFormElementDirective {
     host: { "(sizing-target-changed)": "_setValueFromElement('sizingTarget', $event);", "(fit-into-changed)": "_setValueFromElement('fitInto', $event);", "(closing-reason-changed)": "_setValueFromElement('closingReason', $event);" }
 })
 export class PaperToastNotifyForDiffersDirective implements OnInit, DoCheck {
+    sizingTarget: any;
+    fitInto: any;
+    closingReason: any;
+    
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

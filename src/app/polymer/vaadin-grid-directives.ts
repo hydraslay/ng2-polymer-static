@@ -9,6 +9,7 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(columns-changed)": "_emitChangeEvent('columns', $event);" }
 })
 export class VaadinGridChangeEventsAdapterDirective {
+    columnsChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('columns')] = new EventEmitter<any>(false);
@@ -65,6 +66,10 @@ export class VaadinGridFormElementDirective {
     host: { "(items-changed)": "_setValueFromElement('items', $event);", "(columns-changed)": "_setValueFromElement('columns', $event);", "(sort-order-changed)": "_setValueFromElement('sortOrder', $event);", "(detailed-events-changed)": "_setValueFromElement('detailedEvents', $event);" }
 })
 export class VaadinGridNotifyForDiffersDirective implements OnInit, DoCheck {
+    items: any;
+    columns: any;
+    sortOrder: any;
+    detailedEvents: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

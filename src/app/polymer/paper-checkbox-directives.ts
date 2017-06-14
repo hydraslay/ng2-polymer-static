@@ -9,6 +9,12 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(active-changed)": "_emitChangeEvent('active', $event);", "(focused-changed)": "_emitChangeEvent('focused', $event);", "(disabled-changed)": "_emitChangeEvent('disabled', $event);", "(value-changed)": "_emitChangeEvent('value', $event);", "(invalid-changed)": "_emitChangeEvent('invalid', $event);", "(checked-changed)": "_emitChangeEvent('checked', $event);" }
 })
 export class PaperCheckboxChangeEventsAdapterDirective {
+    activeChange: any;
+    disabledChange: any;
+    focusedChange: any;
+    valueChange: any;
+    invalidChange: any;
+    checkedChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('active')] = new EventEmitter<any>(false);
@@ -70,6 +76,7 @@ export class PaperCheckboxFormElementDirective {
     host: { "(key-event-target-changed)": "_setValueFromElement('keyEventTarget', $event);" }
 })
 export class PaperCheckboxNotifyForDiffersDirective implements OnInit, DoCheck {
+    keyEventTarget: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;

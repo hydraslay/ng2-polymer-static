@@ -9,6 +9,7 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     host: { "(files-changed)": "_emitChangeEvent('files', $event);" }
 })
 export class VaadinUploadChangeEventsAdapterDirective {
+    filesChange: any;
     eventNameForProperty = (property: string) => `${property}Change`;
     constructor() {
         this[this.eventNameForProperty('files')] = new EventEmitter<any>(false);
@@ -65,6 +66,9 @@ export class VaadinUploadFormElementDirective {
     host: { "(headers-changed)": "_setValueFromElement('headers', $event);", "(files-changed)": "_setValueFromElement('files', $event);", "(i18n-changed)": "_setValueFromElement('i18n', $event);" }
 })
 export class VaadinUploadNotifyForDiffersDirective implements OnInit, DoCheck {
+    headers: any;
+    files: any;
+    i18n: any;
     _element: any;
     _iterableDiffers: any;
     _keyValueDiffers: any;
