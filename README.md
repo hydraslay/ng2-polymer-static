@@ -21,7 +21,7 @@ you should add property
   activeChange: any;
   focusedChange: any;
   disabledChange: any;
-in that directive class. (with outputs or inputs)
+in that directive class. (if there is outputs/inputs)
 
 of course if you don't add the properties, ngc will tell you to do so, by error messages.
 
@@ -40,7 +40,7 @@ Run `npm run build:aot`
 
 ## To serve AOT
 
-Run `node copy-dist-files.js` only once (aleady done, do it again if you changed polymer files).
+Run `node copy-dist-files.js` only once (aleady done, do it again if you changed the files).
 
 Run `npm run serve:aot` to serve.
 
