@@ -1,7 +1,7 @@
 # ng2-polymer-static
 
 This project is a collection of generated static directive of polymer element.
-For those who want to build with latest ng2-cli (webpack).
+For those who want to build with latest ng2-cli (JIT or AOT).
 
 There is a list of generated in /src/index.html, and a simple page which has each of the element.
 
