@@ -7,15 +7,15 @@ matrix:
   
 install:
   - ps: Install-Product node $env:nodejs_version
-  - yarn install
+  - npm install -g npm
+  - npm install -g webpack
+  - npm install -g angular-cli
   
 test_script:
   - node --version
-  - yarn --version
-  - node tests\run_e2e.js --appveyor
+  - ng node --version
   
 build: off
 
 cache:
   - node_modules
-  - "%LOCALAPPDATA%/Yarn"
