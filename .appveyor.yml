@@ -16,6 +16,8 @@ install:
 test_script:
   - node --version
   - ng --version
+  - ng build
+  - npm run build:aot
   
 build: on
 
