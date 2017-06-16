@@ -17,7 +17,8 @@ test_script:
   - node --version
   - ng --version
   - ng build
-  - npm run build:aot
+  - .\\node_modules\\.bin\\ngc -p tsconfig-aot.json
+  - .\\node_modules\\.bin\\rollup -c rollup-config.js
   
 build: off
 
