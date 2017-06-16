@@ -11,6 +11,7 @@ install:
   - npm install -g bower
   - npm install -g @angular/cli
   - npm install -g lite-server
+  - npm install
     
 test_script:
   - node --version
