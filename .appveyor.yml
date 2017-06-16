@@ -8,14 +8,17 @@ matrix:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install -g npm
-  - npm install -g webpack
-  - npm install -g angular-cli
-  
+  - npm install -g bower
+  - npm install -g @angular\cli
+  - npm install -g lite-server
+    
 test_script:
   - node --version
-  - ng node --version
+  - ng --version
   
-build: off
+build: 
+  - ng build
+  - npm run build:aot
 
 cache:
   - node_modules
