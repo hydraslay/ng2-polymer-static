@@ -16,9 +16,7 @@ test_script:
   - node --version
   - ng --version
   
-build: 
-  - ng build
-  - npm run build:aot
+build: off
 
 cache:
   - node_modules
